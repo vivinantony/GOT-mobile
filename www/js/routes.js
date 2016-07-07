@@ -10,16 +10,16 @@ angular.module('tltApp')
         controller: 'AppCtrl'
     })
 
-    .state('app.board', {
-        url: '/board',
+    .state('app.quotes', {
+        url: '/quotes',
         views: {
             'menuContent': {
-                templateUrl: 'templates/board.html',
-                controller: 'BoardCtrl'
+                templateUrl: 'templates/quotes.html',
+                controller: 'QuotesCtrl'
             }
         }
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/app/board');
+    $urlRouterProvider.otherwise('/app/quotes');
 })

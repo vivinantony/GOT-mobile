@@ -1,0 +1,36 @@
+<ion-view view-title="#" class="quotes-wrapper">
+    <ion-content>
+        <p ng-if="!cards.length" style="color:white; text-align: center">Pull down to refresh</p>
+        <ion-refresher on-refresh="doRefresh()"></ion-refresher>
+        <td-cards>
+            <td-card id="td-card" ng-repeat="card in cards" on-destroy="cardDestroyed($index)" on-swipe-left="cardSwipedLeft($index)" on-swipe-right="cardSwipedRight($index)" on-partial-swipe="cardPartialSwipe(amt)">
+                <div class="header">
+                    <div class="count">#{{card.id}}</div>
+                </div>
+                <!-- <div class="image"> -->
+                <!-- <div class="no-text overlayBox">
+                        <div class="noBox boxed">Trash</div>
+                    </div> -->
+                <!-- <img ng-src="{{card.image}}"> -->
+                <!-- <div class="yes-text overlayBox">
+                        <div class="yesBox boxed" id="centerMe">Save</div>
+                    </div> -->
+                <!-- </div> -->
+                <div class="content">
+                    {{card.quote}}
+                </div>
+                <div class="footer">
+                    <img class="avatar" ng-src="{{card.avatar}}" />
+                    <h4 class="name">{{card.name}}</h4>
+                </div>
+            </td-card>
+        </td-cards>
+    </ion-content>
+    <ion-footer-bar>
+        <div class="button-bar">
+            <button class="button" ng-click="houseTargaryen()">Targaryen</button>
+            <button class="button" ng-click="houseStark()">Stark</button>
+            <button class="button" ng-click="houseBaratheon()">Baratheon</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

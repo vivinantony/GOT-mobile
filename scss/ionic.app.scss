@@ -17,7 +17,167 @@ $dark:                            #444 !default;
 
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
-
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+$color-light: #ffffff;
+$color-dark: #000000;
+$color-targaryen: #ff0000;
+$color-baratheon: #ffff00;
+@font-face {
+    font-family: "GOT";
+    src: url(../fonts/Game-of-Thrones.ttf);
+}
 
+.overflow-scroll {
+    overflow-y: auto; //fix: scroll bar was visible even when there is empty content in a page
+}
+
+.quotes-wrapper {
+    ion-content {
+        background-color: $color-dark;
+    }
+}
+
+.bar.bar-header {
+    background-color: $color-dark;
+    .title {
+        font-family: "GOT";
+    }
+}
+
+.bar.bar-footer {
+    background-color: $color-dark;
+    background-image: none;
+}
+
+.house-default,
+.house-stark {
+    .bar-header {
+        .title,
+        .ion-navicon {
+            color: $color-light;
+        }
+    }
+    td-card {
+        color: $color-dark;
+        background-color: $color-light;
+        background-image: url(../img/house-stark.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 3px solid #999;
+        .footer {
+            border-top: 1px solid #ddd;
+            .name {
+                color: $color-dark;
+            }
+        }
+    }
+}
+
+.house-targaryen {
+    .bar-header {
+        .title,
+        .ion-navicon {
+            color: $color-targaryen;
+        }
+    }
+    td-card {
+        color: $color-light;
+        background-color: $color-targaryen;
+        background-image: url(../img/house-targaryen.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 3px solid $color-light;
+        .footer {
+            border-top: 1px solid #e00202;
+            .name {
+                color: $color-light;
+            }
+        }
+    }
+}
+
+.house-baratheon {
+    .bar-header {
+        .title,
+        .ion-navicon {
+            color: $color-baratheon;
+        }
+    }
+    td-card {
+        color: $color-dark;
+        background-color: $color-baratheon;
+        background-image: url(../img/house-baratheon.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        border: 3px solid $color-light;
+        .footer {
+            border-top: 1px solid #e5e501;
+            .name {
+                color: $color-dark;
+            }
+        }
+    }
+}
+
+
+/* Card styling */
+
+td-cards {
+    display: block;
+}
+
+td-card {
+    position: absolute;
+    left: 50%;
+    margin: 80px 0 40px -150px;
+    width: 300px;
+    height: 300px;
+    border-radius: 6px;
+    .header {
+        height: 40px;
+        font-size: 15px;
+        padding: 15px;
+    }
+    .content {
+        padding: 10px;
+        font-family: 'GOT';
+        font-weight: bold;
+        font-size: 10px;
+        text-align: center;
+        word-spacing: 5px;
+    }
+    .count {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        color: grey;
+    }
+    .footer {
+        position: absolute;
+        bottom: 0;
+        height: 40px;
+        width: 100%;
+        padding: 5px;
+        .avatar {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            float: left;
+            margin-right: 5px;
+        }
+        .name {
+            font-family: 'GOT';
+            font-size: 10px;
+            font-weight: bold;
+            word-spacing: 5px;
+            float: left;
+        }
+    }
+}
+
+.fade {
+    -webkit-transition: 0.2s opacity linear;
+    transition: 0.2s opacity linear;
+    opacity: 0;
+}

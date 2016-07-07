@@ -1,4 +1,4 @@
-angular.module('tltApp', ['ionic'])
+angular.module('tltApp', ['ionic', 'ionic.contrib.ui.tinderCards'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -14,4 +14,10 @@ angular.module('tltApp', ['ionic'])
             StatusBar.styleDefault();
         }
     });
-});
+})
+
+.config(function($ionicConfigProvider) {
+    $ionicConfigProvider.navBar.alignTitle('left');
+    $ionicConfigProvider.backButton.previousTitleText(false).text('');
+    $ionicConfigProvider.backButton.text('');
+})
